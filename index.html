@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 3. Аппаратно-программные средства Web. Поладов Михаил ПИ21/1</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container container">
+            <h1>Отправка формы</h1>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main__container container">
+            <form method="POST" action="/submit">
+                <input type="text" name="full_name" placeholder="ФИО" required>
+
+                <input type="text" name="phone" placeholder="Номер телефона" required>
+
+                <input type="email" name="email" placeholder="Email" required>
+
+                <input type="date" name="birth_date" required>
+
+                <label class="radio_btn">
+                    <input type="radio" name="gender" value="male"> Мужской
+                </label>
+                <label class="radio_btn">
+                    <input type="radio" name="gender" value="female"> Женский
+                </label>
+
+                <select name="languages[]" multiple required>
+                    <option value="pascal">Pascal</option>
+                    <option value="c">C</option>
+                    <option value="c++">C++</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="php">PHP</option>
+                    <option value="python">Python</option>
+                    <option value="haskell">Haskell</option>
+                    <option value="java">Java</option>
+                    <option value="clojure">Clojure</option>
+                    <option value="prolog">Prolog</option>
+                    <option value="scala">Scala</option>
+                </select>
+
+                <textarea name="bio" placeholder="Ваше сообщение"></textarea>
+
+                <label class="form_checkbox">
+                    <input type="checkbox" name="contract"> С контрактом ознакомлен
+                </label>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
