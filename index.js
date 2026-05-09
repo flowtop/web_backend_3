@@ -151,6 +151,6 @@ app.post('/submit', async (req, res) => {
     }
 });
 
-app.listen(8080, '0.0.0.0', () => {
-    console.log('Server started on http://localhost:3000');
+app.listen(80, '0.0.0.0', () => {
+    console.log('Server started on http://localhost:80');
 });
