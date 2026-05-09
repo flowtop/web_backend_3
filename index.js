@@ -1,6 +1,24 @@
 const express = require('express');
 const mysql = require('mysql2/promise');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+
+console.log(__dirname);
+
+const allowedOrigins = ['http://kubsu-dev.ru', 'http://u82813.kubsu-dev.ru', 'http://u82813.kubsu-dev.ru/web_backend_3', 'http://127.0.0.1:5500']
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);
+        }
+        else {
+            callback(new Error(`Not allowed by CORS: ${origin}`));
+        }
+    },
+    credentials: true,
+};
+
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -85,7 +103,7 @@ app.post('/submit', async (req, res) => {
 
         console.log(req.body);
 
-        // const conn = await pool.getConnection();
+        const conn = await pool.getConnection();
 
         try {
             await conn.beginTransaction();
