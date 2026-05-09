@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("static"));
+app.use(express.static(__dirname + "static"));
 
 // Подключение к БД
 const pool = mysql.createPool({
