@@ -42,6 +42,7 @@ const allowedGenders = ['male', 'female'];
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
+    console.log("Кто-то зашел");
 });
 
 app.post('/submit', async (req, res) => {
