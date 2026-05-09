@@ -8,9 +8,9 @@ app.use(express.static("static"));
 
 // Подключение к БД
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
+    host: 'mysql',
+    user: 'u82813',
+    password: '4313992',
     database: 'testdb'
 });
 
