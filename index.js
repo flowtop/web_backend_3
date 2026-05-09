@@ -8,10 +8,10 @@ app.use(express.static("static"));
 
 // Подключение к БД
 const pool = mysql.createPool({
-    host: 'mysql',
+    host: 'localhost',
     user: 'u82813',
     password: '4313992',
-    database: 'testdb'
+    database: 'u82813'
 });
 
 // Допустимые значения
